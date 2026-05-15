@@ -39,7 +39,7 @@
     "nativewind": "^4.0.36",
     "tailwindcss": "^3.4.0",
     "date-fns": "^4.1.0",
-    "uuid": "^11.0.3",
+    "uuid": "^9.0.0",
     "react-native-safe-area-context": "^4.14.0",
     "react-native-screens": "~4.4.0"
   },
@@ -47,11 +47,11 @@
     "@babel/core": "^7.25.0",
     "@types/react": "~18.3.12",
     "@types/react-native": "~0.76.3",
-    "@types/uuid": "^10.0.0",
+    "@types/uuid": "^9.0.0",
     "@types/jest": "^29.5.14",
     "@typescript-eslint/eslint-plugin": "^8.15.0",
     "@typescript-eslint/parser": "^8.15.0",
-    "eslint": "^9.15.0",
+    "eslint": "^8.57.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-boundaries": "^4.3.1",
     "eslint-import-resolver-typescript": "^3.7.0",
@@ -68,7 +68,7 @@
       "@testing-library/jest-native/extend-expect"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|victory-native)"
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|victory-native|uuid)"
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { UserSettings, UserSettingsProps } from '../../domain/entities/UserSettings';
+import { UpdateSettingsUseCase } from '../../domain/useCases/UpdateSettingsUseCase';
 import { container } from '../../infrastructure/container';
 
 interface SettingsStore {
@@ -32,9 +33,7 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
     if (!settings) return;
     set({ isLoading: true, error: null });
     try {
-      const useCase = new (await import('../../domain/useCases/UpdateSettingsUseCase')).UpdateSettingsUseCase(
-        container.settingsRepository,
-      );
+      const useCase = new UpdateSettingsUseCase(container.settingsRepository);
       const updated = await useCase.execute(settings, partial);
       set({ settings: updated, isLoading: false });
     } catch (err) {
