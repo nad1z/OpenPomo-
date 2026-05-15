@@ -146,7 +146,4 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     letterSpacing: 2,
   },
-  semantic: {
-    error: '#ef4444',
-  },
 });
