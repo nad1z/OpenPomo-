@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'claude/**', 'feature/**', 'fix/**']
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Type Check + Lint + Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: TypeScript type check
+        run: npm run typecheck
+
+      - name: ESLint (architecture boundaries)
+        run: npm run lint
+
+      - name: Check circular dependencies
+        run: npm run check:circular
+
+      - name: Run tests
+        run: npm test
