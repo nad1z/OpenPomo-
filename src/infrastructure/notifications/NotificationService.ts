@@ -33,6 +33,7 @@ export class NotificationService implements INotificationService {
   }
 
   async scheduleSessionComplete(type: SessionType, delaySeconds: number): Promise<string> {
+    if (Platform.OS === 'web') return '';
     const message = MESSAGES[type];
     const id = await Notifications.scheduleNotificationAsync({
       content: {
@@ -46,14 +47,17 @@ export class NotificationService implements INotificationService {
   }
 
   async cancelNotification(id: string): Promise<void> {
+    if (Platform.OS === 'web') return;
     await Notifications.cancelScheduledNotificationAsync(id);
   }
 
   async cancelAll(): Promise<void> {
+    if (Platform.OS === 'web') return;
     await Notifications.cancelAllScheduledNotificationsAsync();
   }
 
   async sendImmediateNotification(title: string, body: string): Promise<void> {
+    if (Platform.OS === 'web') return;
     await Notifications.scheduleNotificationAsync({
       content: { title, body, sound: true },
       trigger: null,
