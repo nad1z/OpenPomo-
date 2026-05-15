@@ -30,7 +30,6 @@ export default function TimerScreen() {
     phase,
     sessionType,
     remainingSeconds,
-    totalSeconds,
     progress,
     completedTodayCount,
     currentStreak,
@@ -42,12 +41,10 @@ export default function TimerScreen() {
     resume,
     reset,
     abandon,
-    skip,
     loadSettings,
   } = useTimer();
 
   const { colors, isDark } = useThemeColors();
-  const setSessionType = useTimerStore((s) => s.sessionType);
 
   const motivationalMessage = MOTIVATIONAL_MESSAGES[
     completedTodayCount % MOTIVATIONAL_MESSAGES.length

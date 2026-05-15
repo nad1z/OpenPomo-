@@ -88,7 +88,7 @@ export class AnalyticsService {
     };
   }
 
-  computeMonthlyStats(sessions: PomodoroSession[], month: string, dailyGoal: number): MonthlyStats {
+  computeMonthlyStats(sessions: PomodoroSession[], month: string, _dailyGoal: number): MonthlyStats {
     const monthSessions = sessions.filter((s) => {
       const m = s.startTime.toISOString().substring(0, 7);
       return m === month;

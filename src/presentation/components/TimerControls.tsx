@@ -35,7 +35,6 @@ export function TimerControls({
 }: TimerControlsProps) {
   const accentColor = SESSION_COLORS[sessionType];
   const surfaceColor = isDark ? Colors.dark.elevated : Colors.light.elevated;
-  const textColor = isDark ? Colors.dark.text.primary : Colors.light.text.primary;
   const mutedColor = isDark ? Colors.dark.text.muted : Colors.light.text.muted;
 
   if (isLoading) {

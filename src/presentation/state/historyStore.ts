@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { PomodoroSession } from '../../domain/entities/PomodoroSession';
 import { HistoryFilter } from '../../domain/useCases/GetSessionHistoryUseCase';
 import { container } from '../../infrastructure/container';
 import { GetSessionHistoryUseCase } from '../../domain/useCases/GetSessionHistoryUseCase';

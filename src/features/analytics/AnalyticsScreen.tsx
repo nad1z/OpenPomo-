@@ -15,14 +15,13 @@ import { formatMinutes, getDayLabel } from '../../shared/utils/dateUtils';
 
 export default function AnalyticsScreen() {
   const { colors, isDark } = useThemeColors();
-  const { daily, weekly, monthly, currentStreak, longestStreak, isLoading, loadAll } =
+  const { daily, weekly, monthly, currentStreak, longestStreak, loadAll } =
     useAnalyticsStore((s) => ({
       daily: s.dailyStats,
       weekly: s.weeklyStats,
       monthly: s.monthlyStats,
       currentStreak: s.currentStreak,
       longestStreak: s.longestStreak,
-      isLoading: s.isLoading,
       loadAll: s.loadAll,
     }));
 

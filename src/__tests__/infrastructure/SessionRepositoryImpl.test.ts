@@ -1,5 +1,6 @@
 import { PomodoroSession } from '../../domain/entities/PomodoroSession';
 import { SessionRepositoryImpl } from '../../infrastructure/repositoriesImpl/SessionRepositoryImpl';
+import { AsyncStorageClient } from '../../infrastructure/storage/AsyncStorageClient';
 
 const mockStorage = {
   data: new Map<string, string>(),
@@ -32,7 +33,7 @@ describe('SessionRepositoryImpl', () => {
 
   beforeEach(() => {
     mockStorage.data.clear();
-    repo = new SessionRepositoryImpl(mockStorage as any);
+    repo = new SessionRepositoryImpl(mockStorage as unknown as AsyncStorageClient);
   });
 
   it('saves and retrieves a session by id', async () => {

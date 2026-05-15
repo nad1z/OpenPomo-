@@ -17,7 +17,7 @@ function SettingRow({
   label,
   subtitle,
   children,
-  isDark,
+  isDark: _isDark,
 }: {
   label: string;
   subtitle?: string;
